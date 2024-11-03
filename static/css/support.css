@@ -1,0 +1,156 @@
+/* Body styling */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+/* Header styling with animation */
+.support-header {
+    text-align: center;
+    padding: 10px 50px 10px; /* Kerakli bo'yicha paddingni sozlang */
+    background-color: #0e73b1;
+    color: #fff;
+    margin-top: 60px; /* Navbar balandligiga mos holda sozlang */
+    animation: fadeInDown 1.5s ease-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.support-header h1 {
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.support-header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Keyframes for animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Support section layout */
+.support-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+    justify-content: space-between;
+    animation: fadeIn 1.5s ease;
+}
+
+/* Cards styling */
+.faq, .contact-form, .live-chat {
+    flex: 1 1 calc(33% - 20px);
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.faq:hover, .contact-form:hover, .live-chat:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #0e73b1;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* FAQ list styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Form elements styling */
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #0e73b1;
+    box-shadow: 0 0 5px rgba(14, 115, 177, 0.3);
+}
+
+/* Button styling */
+button {
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #0056b3, #003580);
+    transform: scale(1.02);
+}
+
+/* Live Chat button specific styling */
+button[type="submit"], .live-chat button {
+    background: linear-gradient(90deg, #28a745, #218838);
+}
+
+button[type="submit"]:hover, .live-chat button:hover {
+    background: linear-gradient(90deg, #218838, #1e7e34);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .support-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .faq, .contact-form, .live-chat {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+}

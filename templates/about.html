@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us - Testify Hub{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about-style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="about-content">
+    <h1>Testify Hub</h1>
+    <p>Testify Hub – bu o‘quv markazlari va ta’lim muassasalariga mo‘ljallangan zamonaviy test yaratish va boshqarish platformasi. Platformaning asosiy maqsadi ta'lim jarayonlarini avtomatlashtirish, testlarni tez va samarali tarzda generatsiya qilish hamda natijalarni tahlil qilish orqali ta'lim sifatini oshirishdir.</p>
+    <div class="button-group">
+            <a href="{% url 'pricing' %}" class="learn-more-btn">Ta'riflar</a>
+            <a href="{% url 'support' %}" class="learn-more-btn">Aloqa</a>
+    </div>
+</div>
+<div class="about-image">
+    <img src="{% static 'media/education.jpg' %}" alt="About Testify Hub">
+</div>
+{% endblock %}
+
+
+{% block extra_scripts %}
+<script src="{% static 'js/about-script.js' %}"></script>
+{% endblock %}

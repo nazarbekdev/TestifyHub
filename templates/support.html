@@ -1,0 +1,57 @@
+<!-- support.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Testify Hub - Support{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/support.css' %}">
+<header class="support-header">
+    <h1>Testify Hub Qo'llab-quvvatlash Markazi</h1>
+    <p>Bizning jamoamiz har qanday savol va muammolar bo‘yicha yordamga tayyor!</p>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="support-section">
+    <div class="faq">
+        <h2>FAQs (Tez-tez so‘raladigan savollar)</h2>
+        <ul>
+            <li><strong>Savol:</strong> Test yaratish va boshqarish qanday ishlaydi?<br><em>Javob:</em> Test yaratish uchun bizning platformamizda maxsus vositalar mavjud...</li>
+            <li><strong>Savol:</strong> Narxlarni qanday ko‘rishim mumkin?<br><em>Javob:</em> Narxlar bo‘limida to‘liq ma'lumot topasiz...</li>
+            <!-- Qo'shimcha savollar -->
+        </ul>
+    </div>
+
+    <div class="contact-form">
+        <h2>Biz bilan bog‘laning</h2>
+        <form action="{% url 'support_contact' %}" method="post">
+            {% csrf_token %}
+            <label for="name">Ism:</label>
+            <input type="text" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+            <label for="message">Xabar:</label>
+            <textarea name="message" rows="4" required></textarea>
+            <button type="submit">Yuborish</button>
+        </form>
+    </div>
+
+    <div class="live-chat">
+        <h2>Live Chat</h2>
+        <p>Agar savollaringiz bo'lsa, bizning Live Chat xizmatimiz orqali tezkor yordam olishingiz mumkin.</p>
+        <button onclick="startLiveChat()">Live Chatni boshlash</button>
+        <div id="notification" style="display: none; color: green; margin-top: 10px;"></div> <!-- Bildirishnoma elementini qo'shish -->
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/support.js' %}"></script>
+<script>
+function startLiveChat() {
+    const notification = document.getElementById("notification");
+    notification.textContent = "Tez orada ishga tushadi";
+    notification.style.display = "block"; // Bildirishnomani ko'rsatish
+}
+</script>
+{% endblock %}

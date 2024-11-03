@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Partnership - Testify Hub{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/partnership.css' %}">
+    <header class="pricing-header">
+        <h1>Biz bilan hamkorlik qiling</h1>
+        <p>Testify Hub bilan birga ishlang, innovatsion test yechimlarini yaratish va ta'lim sohasini rivojlantirish uchun.</p>
+    </header>
+{% endblock %}
+
+{% block content %}
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <h2>Nima uchun Testify Hub bilan hamkorlik qilish kerak?</h2>
+        <div class="benefit">
+            <img src="{% static 'media/growth_icon.png' %}" alt="Growth Icon">
+            <h3>O'zaro Rivojlanish</h3>
+            <p>Bir-birimizning kuchlarimizdan foydalangan holda birga o'sing va ta'lim sohasida yangi cho'qqilarga erishing.</p>
+        </div>
+        <div class="benefit">
+            <img src="{% static 'media/innovation_icon.png' %}" alt="Innovation Icon">
+            <h3>Innovatsion Yechimlar</h3>
+            <p>Dunyodagi ta'lim muassasalariga yangi test yechimlarini olib kelish uchun biz bilan hamkorlik qiling.</p>
+        </div>
+        <div class="benefit">
+            <img src="{% static 'media/support_icon.png' %}" alt="Support Icon">
+            <h3>Qo'llab-quvvatlash</h3>
+            <p>Bizning qo'llab-quvvatlash jamoamizdan foydalaning va ish faoliyatingizni samarali va davomli rivojlanishini ta'minlang.</p>
+        </div>
+    </section>
+
+    <!-- Partner Form Section -->
+    <section class="partner-form-section">
+        <h2>Hamkor bo'ling</h2>
+        <p>Hamkorlik imkoniyatlari haqida suhbatni boshlash uchun quyidagi shaklni to'ldiring.</p>
+        <form action="{% url 'partner_request' %}" method="post">
+            {% csrf_token %}
+            <label for="company_name">Kompaniya nomi:</label>
+            <input type="text" id="company_name" name="company_name" required>
+
+            <label for="contact_name">Foydalanuvchi ismi:</label>
+            <input type="text" id="contact_name" name="contact_name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Telefon raqam:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="message">Xabar:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tashkilotingiz haqida bizga ma'lumot bering va qanday hamkorlik qila olishimizni ayting."></textarea>
+
+            <button type="submit">Yuborish</button>
+        </form>
+    </section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/partnership.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Testify Hub{% endblock %}</title>
+
+    <!-- General CSS file -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Additional CSS for specific pages -->
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <a href="{% url 'home' %}" class="navbar-brand">🎓 Testify Hub</a>
+            <ul class="navbar-links">
+                <li><a href="{% url 'home' %}">Asosiy</a></li>
+                <li><a href="{% url 'projects' %}">Bizning Loyihalarimiz</a></li>
+                <li><a href="{% url 'pricing' %}">Narxlar</a></li>
+                <li><a href="{% url 'about' %}">Biz Haqimizda</a></li>
+                <li><a href="{% url 'partnership' %}">Hamkorlik</a></li>
+                <li><a href="{% url 'support' %}">Aloqa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            {% block content %}
+            <!-- Sahifa uchun maxsus kontent bu yerda joylashadi -->
+            {% endblock %}
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; {{ year|default:"2024" }} Testify Hub. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://t.me/mr_uzdev" target="_blank">
+                    <i class="fab fa-telegram-plane"></i> Telegram |
+                </a>
+                  <a href="https://instagram.com/mr_uzdev" target="_blank">
+                    <i class="fab fa-instagram"></i>  Instagram |
+                </a>
+                   <a>  📞 +998 77 877 76 37</a>
+{#                <a> 📞 +998 91 212 24 00</a>#}
+            </div>
+        </div>
+    </footer>
+
+    <!-- General JavaScript file -->
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <!-- Additional JavaScript for specific pages -->
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

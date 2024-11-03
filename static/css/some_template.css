@@ -1,0 +1,46 @@
+/* General styles for content container */
+.content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Title styling */
+.content-container h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Paragraph styling */
+.content-container p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Year styling */
+.content-container p:last-of-type {
+    font-weight: bold;
+    color: #007BFF; /* Brand color for emphasis */
+}
+
+/* Add some responsive adjustments */
+@media (max-width: 768px) {
+    .content-container {
+        padding: 1.5rem;
+    }
+
+    .content-container h1 {
+        font-size: 2rem;
+    }
+
+    .content-container p {
+        font-size: 1rem;
+    }
+}

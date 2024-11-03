@@ -1,0 +1,173 @@
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Benefits Section Styling with Animation */
+.benefits-section {
+    text-align: center;
+    padding: 3em 1em;
+    background-color: #f9f9f9;
+    color: #333;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.benefits-section header h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.benefits-section header p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 2em;
+}
+
+.benefits-section h2 {
+    font-size: 1.8em;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.benefit {
+    display: inline-block;
+    width: 30%;
+    margin: 1em;
+    text-align: center;
+    vertical-align: top;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.benefit img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1em;
+}
+
+.benefit h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.benefit p {
+    color: #666;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Partner Form Section Styling with Animation */
+.partner-form-section {
+    padding: 3em 1em;
+    text-align: center;
+    background-color: #ffffff;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.partner-form-section h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.partner-form-section p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 2em;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+    animation: fadeIn 1.5s ease-out;
+}
+
+label {
+    font-size: 1em;
+    color: #333;
+    margin-top: 1em;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.75em;
+    margin-top: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #ff8c00;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 0.75em;
+    margin-top: 1.5em;
+    background-color: #ff8c00;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: fadeIn 1.5s ease-out;
+}
+
+button[type="submit"]:hover {
+    background-color: #e07b00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .benefit {
+        width: 100%;
+        margin: 1em 0;
+    }
+
+    form {
+        width: 90%;
+    }
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background-color: #34495e;
+    color: #fff;
+}
+
+/* Pricing Header Styling */
+.pricing-header {
+    text-align: center;
+    padding: 10px 50px 10px; /* Kerakli bo'yicha paddingni sozlang */
+    background-color: #0e73b1;
+    color: #fff;
+    margin-top: 60px; /* Navbar balandligiga mos holda sozlang */
+    animation: fadeInLeft 1.5s ease-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

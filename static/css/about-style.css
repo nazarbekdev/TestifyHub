@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s ease-out;
+}
+
+.about-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.about-content h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 20px;
+    animation: fadeInLeft 1.2s ease-out;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    animation: fadeInLeft 1.5s ease-out;
+}
+
+.button-group {
+    margin-top: 20px;
+    animation: fadeInUp 1.8s ease-out;
+    color: #003580;
+}
+
+.action-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.action-button:hover {
+    background-color: #555;
+    transform: translateY(-3px);
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInRight 1.5s ease-out;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.learn-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.learn-more-btn:hover {
+    background-color: #0056b3;
+}

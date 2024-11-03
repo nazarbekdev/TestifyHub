@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+header {
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background-color: #34495e;
+    color: #fff;
+
+}
+
+.pricing-header {
+    text-align: center;
+    padding: 10px 50px 10px; /* Kerakli bo'yicha paddingni sozlang */
+    background-color: #0e73b1;
+    color: #fff;
+    margin-top: 60px; /* Navbar balandligiga mos holda sozlang */
+    animation: fadeInLeft 1.5s ease-out;
+}
+
+.pricing-section {
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 80px;
+}
+
+.pricing-card {
+    background-color: #ffffff;
+    padding: 80px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    animation: fadeInRight 1.5s ease-out;
+
+}
+
+.pricing-card h2 {
+    color: #333;
+}
+
+.pricing-card p {
+    margin: 10px 0;
+}
+
+.pricing-card .price {
+    font-size: 24px;
+    color: #007bff;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.form-overlay {
+    display: none; /* Form dastlab yashirin bo'ladi */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.form-overlay form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}

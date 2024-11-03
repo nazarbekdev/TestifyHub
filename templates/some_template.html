@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Some Page - Testify Hub{% endblock %}
+
+{% block extra_css %}
+<!-- You can add any specific CSS for this page here -->
+<link rel="stylesheet" href="{% static 'css/some_template.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+    <h1>Welcome to Some Page</h1>
+    <p>This is a sample page to demonstrate how to use dynamic content in templates.</p>
+    <p>The current year is {{ year }}.</p>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<!-- Add any specific JavaScript for this page here -->
+<script src="{% static 'js/some_template.js' %}"></script>
+{% endblock %}

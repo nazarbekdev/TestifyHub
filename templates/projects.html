@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Projects - Testify Hub{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/projects.css' %}">
+<header class="header-project">
+    <h1>Bizning Loyihalarimiz</h1>
+    <p>Ta'lim muassasalari uchun innovatsion va samarali yechimlar.</p>
+</header>
+{% endblock %}
+
+{% block content %}
+    <section class="project-card">
+        <div class="project-image">
+            <img src="{% static 'media/photo_2024-10-28 21.13.52.jpeg' %}" alt="Cam Test Project Image">
+        </div>
+        <div class="project-info">
+            <h2>Cam Test</h2>
+            <p>Oliy ta'lim muassasasiga kiruvchilar uchun bilimni sinash. Ushbu platforma oliy ta'limga kiruvchilar uchun barcha fanlardan kirish imtihoni namunasidagi testlarni tashkil etish, test materiallarini shakllantirish va ularning natijalarini aniqlashda yordam beradi. Shuningdek, sinov testlarini tashkil qilishda o'qituvchilar va repetitorlarga qo'llab-quvvatlash uchun mo'ljallangan.</p>
+            <ul>
+                <li>Kirish imtihonlari namunasidagi testlar</li>
+                <li>Test materiallarini avtomatik shakllantirish</li>
+                <li>O'qituvchilar va repetitorlar uchun yordam</li>
+                <li>Login va Gmail hisob talab etilmaydi</li>
+            </ul>
+            <a href="https://play.google.com/store/apps/details?id=uz.camtest.app" target="_blank" class="explore-btn">Yuklab olish</a>
+        </div>
+    </section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/projects.js' %}"></script>
+{% endblock %}

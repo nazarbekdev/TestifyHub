@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Testify Hub - Home{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <h1>Testify Hub'ga Xush Kelibsiz</h1>
+        <p>Sizning ishonchli platformangiz, samarali va oson test yechimlari uchun. Bizning xizmatlarimizdan foydalaning, ta'lim va test ehtiyojlaringizda qanday yordam bera olishimizni ko'ring.</p>
+        <a href="/about/" class="learn-more-btn">Batafsil</a>
+    </div>
+    <div class="image-section">
+        <img src="{% static 'media/Top-12-Pioneers-in-Education-scaled.jpg' %}" alt="Testify Hub Image">
+    </div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

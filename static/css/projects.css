@@ -1,0 +1,109 @@
+/* Umumiy body uslubi */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+/* Projects sahifasiga xos header uslubi */
+.header-project {
+    text-align: center;
+    padding: 20px 50px; /* Kerakli bo'yicha paddingni sozlang */
+    background-color: #0e73b1; /* Boshqa ranglardan tanlov */
+    color: #fff;
+    margin-top: 60px; /* Navbar balandligiga mos holda sozlang */
+    animation: fadeInLeft 1.5s ease-out;
+    /*border-radius: 10px; !* Burchaklarni yumshatish *!*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Boshqa soyali effekt */
+}
+
+/* Project kartochkasi uslubi */
+.project-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 900px;
+    margin: 2em auto;
+    background-color: #fff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s; /* Kartochka ko'tarilishi */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Hoverda ko'tarilishi */
+}
+
+/* Kartochkadagi rasm uslubi */
+.project-image img {
+    width: 100%;
+    max-width: 300px; /* Rasm kengligini cheklaydi */
+    height: auto;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/* Project ma'lumotlari uslubi */
+.project-info {
+    padding: 1.5em;
+    color: #333;
+}
+
+.project-info h2 {
+    font-size: 2em; /* Sarlavha kattaligini oshirish */
+    color: #333;
+    margin-bottom: 0.5em;
+    font-weight: bold; /* Qalin sarlavha */
+}
+
+.project-info p {
+    font-size: 1.1em; /* Matn kattaligini oshirish */
+    color: #555;
+    margin-bottom: 1em;
+    line-height: 1.6; /* Qatorlar orasidagi masofa */
+}
+
+.project-info ul {
+    list-style: none;
+    padding: 0;
+    color: #777;
+}
+
+.project-info ul li {
+    margin: 0.5em 0;
+    padding-left: 1.5em; /* Boshidan masofa */
+    position: relative;
+}
+
+.project-info ul li::before {
+    content: ''; /* Ikonkalarni qo'shish */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Vertikal markazda joylashtirish */
+    width: 8px;
+    height: 8px;
+    background-color: #0e73b1; /* Mavjud rang */
+    border-radius: 50%; /* Yuqori doira */
+}
+
+/* Tugma uslubi */
+.explore-btn {
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    font-size: 1em;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Tugma ko'tarilishi */
+    text-decoration: none;
+}
+
+.explore-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Hoverda o'lchamni oshirish */
+}

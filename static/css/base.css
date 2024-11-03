@@ -1,0 +1,122 @@
+/* Umumiy sahifa o'lchamlari va font */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar dizayni */
+header {
+    background-color: #2c3e50; /* Zamonaviy rang */
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: fixed; /* Yopishtirish */
+    top: 0; /* Yuqoriga yopishtirish */
+    width: 100%; /* Kengligi */
+    z-index: 1000; /* O'zgarishlar ustida ko'rsatish uchun */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff5733; /* Jozibador rang */
+    text-transform: uppercase;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-links li a:hover {
+    background-color: #ff5733; /* Hover paytida rang */
+    color: #fff;
+}
+
+/* Sahifa kontentining asosiy o'rnatmasi */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em 0;
+    flex: 1;
+    margin-top: 100px; /* Navbarning balandligini hisobga olish */
+}
+
+/* Footer dizayni */
+footer {
+    background-color: #34495e; /* Zamonaviy rang */
+    color: white;
+    padding: 1.5em;
+    text-align: center;
+    position: fixed; /* Yopishtirish */
+    bottom: 0; /* Pastga yopishtirish */
+    width: 100%; /* Kengligi */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #ff5733; /* Havolalar rangi */
+    text-decoration: none; /* Chizilgan havolalarni olib tashlash */
+    margin-right: 10px; /* Havolalar orasidagi bo'sh joy */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Hover holatida chizish */
+}
+
+.footer-links i {
+    margin-right: 5px; /* Ikona va matn orasidagi bo'sh joy */
+}
+
+/* Button styling */
+button {
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    padding: 0.7em 1.5em;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #e74c3c;
+    transform: translateY(-2px);
+}
