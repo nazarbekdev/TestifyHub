@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Try for 14 Days Free - Testify Hub{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/try_14_days.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="trial-form-section">
+        <h1>14 Kunlik Bepul Sinovni Boshlang</h1>
+        <form id="trial-form" method="post" action="{% url 'try_for_14_days' %}">
+            {% csrf_token %}
+            <label for="full_name">To'liq Ism:</label>
+            <input type="text" id="full_name" name="full_name" required>
+
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Telefon Raqam:</label>
+            <input type="text" id="phone" name="phone">
+
+            <button type="submit" class="btn submit-btn">Yuborish</button>
+        </form>
+    </section>
+{% endblock %}

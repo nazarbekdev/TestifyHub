@@ -3,7 +3,9 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from datetime import datetime
-from .models import PartnerRequest
+from .models import PartnerRequest, TrialRequest
+from .forms import TrialForm
+
 
 def home(request):
     return render(request, 'home.html')
@@ -100,3 +102,23 @@ def subscribe(request):
 
 def some_view(request):
     return render(request, 'some_template.html', {'year': datetime.now().year})
+
+
+def watch_demo_view(request):
+    return render(request, 'watch-demo.html')
+
+
+def try_for_14_view(request):
+    if request.method == "POST":
+        form = TrialForm(request.POST)
+        if form.is_valid():
+            trial_request = form.save()
+            return redirect('trial_success')
+    else:
+        form = TrialForm()
+
+    return render(request, 'try-for-14-days.html', {'form': form})
+
+
+def trial_success(request):
+    return render(request, 'trial_success.html')

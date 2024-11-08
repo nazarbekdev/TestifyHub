@@ -56,6 +56,40 @@ header {
     color: #fff;
 }
 
+.free-14-days {
+    position: absolute;
+    top: 10px;  /* Yuqoridan bo'sh joy */
+    right: 10px; /* O'ng tomondan bo'sh joy */
+    background-color: #18cf0a;  /* Rang */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    /*transition: background-color 0.3s ease;*/
+    animation: pulseAnimation 3.5s infinite;
+}
+
+.free-14-days:hover {
+    background-color: #59cf0b;  /* Hover holatida rang */
+}
+
+/* Animatsiya yaratish */
+@keyframes pulseAnimation {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+}
+
 /* Sahifa kontentining asosiy o'rnatmasi */
 .container {
     width: 90%;
