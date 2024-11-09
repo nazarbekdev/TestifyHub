@@ -74,6 +74,18 @@ header {
     background-color: #59cf0b;  /* Hover holatida rang */
 }
 
+.watch-demo {
+    color: #edea08 !important; /* Matn rangini qizil qiladi */
+    font-weight: bold; /* Matnni qalinlashtirish (ixtiyoriy) */
+    text-decoration: none; /* Linkning ostiga chizilmasin */
+    animation: pulseAnimation 1.5s infinite;
+}
+
+.watch-demo:hover {
+    background-color: #cf0b0b; /* Hover holatida fon rangi */
+}
+
+
 /* Animatsiya yaratish */
 @keyframes pulseAnimation {
     0% {
