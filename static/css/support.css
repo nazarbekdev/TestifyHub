@@ -16,6 +16,7 @@ body {
     margin-top: 60px; /* Navbar balandligiga mos holda sozlang */
     animation: fadeInDown 1.5s ease-out;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Endi yopishmaydi */
 }
 
 .support-header h1 {

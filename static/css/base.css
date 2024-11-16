@@ -26,8 +26,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1em 2em;
-    max-width: 1200px;
-    margin: auto;
+    max-width: 100%; /* Cheksiz kenglik */
+    overflow-x: auto; /* Agar sig'masa scroll qo'shadi */
+    white-space: nowrap; /* Elementlarni qator bo'ylab joylashtiradi */
 }
 
 .navbar-brand {
@@ -35,39 +36,47 @@ header {
     font-weight: bold;
     color: #ff5733; /* Jozibador rang */
     text-transform: uppercase;
+    text-decoration: none;
 }
 
 .navbar-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 10px; /* Oraliqni qisqartirish */
+    flex-wrap: nowrap; /* Elementlarni bir qatorda ushlab turadi */
+    overflow-x: auto; /* Scroll qo'shish uchun */
+}
+
+.navbar-links li {
+    white-space: nowrap; /* Har bir elementni bir qatorga sig'diradi */
 }
 
 .navbar-links li a {
     color: white;
     text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 5px 10px; /* Paddingni qisqartirish */
+    font-size: 0.9rem; /* Kichikroq shrift */
+    border-radius: 3px; /* Tugma burchaklarini yumaloqlash */
     transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar-links li a:hover {
-    background-color: #ff5733; /* Hover paytida rang */
+    background-color: #ff5733; /* Hover holatida rang */
     color: #fff;
 }
 
 .free-14-days {
     position: absolute;
-    top: 10px;  /* Yuqoridan bo'sh joy */
-    right: 10px; /* O'ng tomondan bo'sh joy */
+    top: 17px;  /* Yuqoridan bo'sh joy */
+    right: 8px; /* O'ng tomondan bo'sh joy */
     background-color: #18cf0a;  /* Rang */
     color: white;
-    padding: 10px 20px;
+    padding: 5px 15px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    /*transition: background-color 0.3s ease;*/
-    animation: pulseAnimation 3.5s infinite;
+    white-space: nowrap; /* Tugmalarni bir qatorga majburlash */
+    animation: pulseAnimation 2.5s infinite;
 }
 
 .free-14-days:hover {
@@ -78,7 +87,7 @@ header {
     color: #edea08 !important; /* Matn rangini qizil qiladi */
     font-weight: bold; /* Matnni qalinlashtirish (ixtiyoriy) */
     text-decoration: none; /* Linkning ostiga chizilmasin */
-    animation: pulseAnimation 1.5s infinite;
+    animation: pulseAnimation 3.0s infinite;
 }
 
 .watch-demo:hover {

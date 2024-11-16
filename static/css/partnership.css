@@ -170,4 +170,6 @@ header {
     margin-top: 60px; /* Navbar balandligiga mos holda sozlang */
     animation: fadeInLeft 1.5s ease-out;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Endi yopishmaydi */
+
 }
