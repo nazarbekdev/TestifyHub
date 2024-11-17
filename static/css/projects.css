@@ -31,6 +31,8 @@ body {
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s; /* Kartochka ko'tarilishi */
+    animation: fadeInRight 1.5s ease-out;
+
 }
 
 .project-card:hover {

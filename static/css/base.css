@@ -67,17 +67,22 @@ header {
 
 .free-14-days {
     position: absolute;
-    top: 17px;  /* Yuqoridan bo'sh joy */
     right: 8px; /* O'ng tomondan bo'sh joy */
     background-color: #18cf0a;  /* Rang */
     color: white;
-    padding: 5px 15px;
-    border-radius: 5px;
+    padding: 5px 15px; /* Dumaloqlash uchun kvadrat bo‘lishini ta’minlash */
+    border-radius: 70%; /* To‘liq dumaloq shakl */
     text-decoration: none;
     font-weight: bold;
-    white-space: nowrap; /* Tugmalarni bir qatorga majburlash */
+    display: flex; /* Matnni markazga joylash uchun */
+    align-items: center; /* Vertikal markazlash */
+    justify-content: center; /* Gorizontal markazlash */
+    width: 120px; /* Kengligi */
+    height: 20px; /* Balandligi */
+    white-space: nowrap; /* Tugmani bir qator bo'lib ushlab turish */
     animation: pulseAnimation 2.5s infinite;
 }
+
 
 .free-14-days:hover {
     background-color: #59cf0b;  /* Hover holatida rang */
@@ -174,4 +179,43 @@ button {
 button:hover {
     background-color: #e74c3c;
     transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1em;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        gap: 5px;
+        overflow-x: visible;
+    }
+
+    .free-14-days {
+        width: 100px;
+        height: auto;
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+
+    .container {
+        margin-top: 80px;
+        padding: 1em;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links a {
+        margin: 5px 0;
+    }
+
+    button {
+        padding: 0.5em 1em;
+        font-size: 0.9rem;
+    }
 }
