@@ -10,13 +10,14 @@ body {
 /* Header styling with animation */
 .support-header {
     text-align: center;
-    padding: 10px 50px 10px; /* Kerakli bo'yicha paddingni sozlang */
-    background-color: #0e73b1;
+    padding: 20px 50px; /* Kerakli bo'yicha paddingni sozlang */
+    background-color: #0e73b1; /* Boshqa ranglardan tanlov */
     color: #fff;
-    margin-top: 60px; /* Navbar balandligiga mos holda sozlang */
+    margin-top: 50px; /* Navbar balandligiga mos holda sozlang */
     animation: fadeInDown 1.5s ease-out;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: relative; /* Endi yopishmaydi */
+    /*border-radius: 10px; !* Burchaklarni yumshatish *!*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Boshqa soyali effekt */
+    /*position: relative; !* Endi yopishmaydi *!*/
 }
 
 .support-header h1 {

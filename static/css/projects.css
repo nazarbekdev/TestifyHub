@@ -9,14 +9,14 @@ body {
 /* Projects sahifasiga xos header uslubi */
 .header-project {
     text-align: center;
-    padding: 20px 60px; /* Kerakli bo'yicha paddingni sozlang */
+    padding: 20px 50px; /* Kerakli bo'yicha paddingni sozlang */
     background-color: #0e73b1; /* Boshqa ranglardan tanlov */
     color: #fff;
-    margin-top: 6px; /* Navbar balandligiga mos holda sozlang */
+    margin-top: 50px; /* Navbar balandligiga mos holda sozlang */
     animation: fadeInLeft 1.5s ease-out;
     /*border-radius: 10px; !* Burchaklarni yumshatish *!*/
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Boshqa soyali effekt */
-    position: relative; /* Endi yopishmaydi */
+    /*position: relative; !* Endi yopishmaydi *!*/
 }
 
 /* Project kartochkasi uslubi */

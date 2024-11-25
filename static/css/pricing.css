@@ -76,17 +76,22 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Orqa fon yarim shaffof */
+    /*display: flex; !* Flexbox yordamida markazlash *!*/
+    justify-content: center; /* Gorizontal markazlash */
+    align-items: center; /* Vertikal markazlash */
+    z-index: 1000; /* Yuqori darajada ko'rsatilishi uchun */
 }
 
 .form-overlay form {
     background-color: #fff;
-    padding: 20px;
+    padding: 20px 30px;
     border-radius: 8px;
-    width: 300px;
+    width: 100%; /* Foydalanuvchi ekraniga moslashadi */
+    max-width: 400px; /* Maksimal kenglik */
     text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soyali effekt */
+    animation: fadeInScale 0.5s ease-in-out; /* Yoqimli ochilish animatsiyasi */
 }
 
 label {
@@ -100,4 +105,15 @@ input, textarea {
     margin-top: 5px;
     border: 1px solid #ddd;
     border-radius: 4px;
+}
+
+@keyframes fadeInScale {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
