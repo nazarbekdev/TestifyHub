@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from datetime import datetime
-from .models import PartnerRequest, TrialRequest
+from .models import PartnerRequest, TrialRequest, Subscription
 from .forms import TrialForm
 
 
@@ -81,23 +81,23 @@ def pricing(request):
     return render(request, 'pricing.html')
 
 
-def subscribe(request):
-    if request.method == 'POST':
-        first_name = request.POST['first_name']
-        last_name = request.POST['last_name']
-        email = request.POST['email']
-        phone = request.POST['phone']
-        description = request.POST['description']
-        plan = request.POST['plan']
-
-        # Adminga subscribe ma'lumotini yuborish (imkoniyat bo'lsa email orqali)
-        send_mail(
-            'Yangi Subscribe!',
-            f'Ism: {first_name}\nFamiliya: {last_name}\nEmail: {email}\nTelefon: {phone}\nTa\'rif: {plan}\nIzoh: {description}',
-            'from@example.com',
-            ['admin@example.com']
-        )
-        return redirect('pricing')
+# def subscribe(request):
+#     if request.method == 'POST':
+#         first_name = request.POST['first_name']
+#         last_name = request.POST['last_name']
+#         email = request.POST['email']
+#         phone = request.POST['phone']
+#         description = request.POST['description']
+#         plan = request.POST['plan']
+#
+#         # Adminga subscribe ma'lumotini yuborish (imkoniyat bo'lsa email orqali)
+#         send_mail(
+#             'Yangi Subscribe!',
+#             f'Ism: {first_name}\nFamiliya: {last_name}\nEmail: {email}\nTelefon: {phone}\nTa\'rif: {plan}\nIzoh: {description}',
+#             'from@example.com',
+#             ['admin@example.com']
+#         )
+#         return redirect('pricing')
 
 
 def some_view(request):
@@ -122,3 +122,27 @@ def try_for_14_view(request):
 
 def trial_success(request):
     return render(request, 'trial_success.html')
+
+
+def subscribe(request):
+    if request.method == 'POST':
+        plan = request.POST.get('plan')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        description = request.POST.get('description')
+
+        # Ma'lumotlarni saqlash
+        subscription = Subscription.objects.create(
+            plan=plan,
+            first_name=first_name,
+            last_name=last_name,
+            email=email,
+            phone=phone,
+            description=description
+        )
+        messages.success(request, f"{plan} rejasi uchun muvaffaqiyatli obuna bo'ldingiz!")
+        return redirect('pricing')  # Pricing sahifasiga qayta yo'naltirish
+
+    return render(request, 'pricing.html')  # Shaklni yana ko'rsatish (GET so'rovlari uchun)

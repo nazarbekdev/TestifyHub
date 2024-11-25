@@ -1,7 +1,9 @@
-function openSubscribeForm(plan) {
-    document.getElementById('subscribe-form').style.display = 'flex'; // Formani ko'rsatish
-    document.getElementById('plan-name').textContent = plan; // Plan nomini yangilash
+function openSubscribeForm(planName) {
+    document.getElementById('plan-name').textContent = planName;
+    document.querySelector('input[name="plan"]').value = planName;
+    document.getElementById('subscribe-form').style.display = 'block';
 }
+
 
 function closeSubscribeForm() {
     document.getElementById('subscribe-form').style.display = 'none'; // Formani yashirish
