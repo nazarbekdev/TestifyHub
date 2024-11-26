@@ -13,6 +13,18 @@
 
 {% block content %}
 <section class="support-section">
+    <div>
+        <!-- Xabarlarni ko‘rsatish -->
+        {% if messages %}
+            <div id="messages">
+                {% for message in messages %}
+                    <div class="message">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
     <div class="faq">
         <h2>FAQs (Tez-tez so‘raladigan savollar)</h2>
         <ul>
@@ -21,21 +33,19 @@
             <!-- Qo'shimcha savollar -->
         </ul>
     </div>
-
     <div class="contact-form">
         <h2>Biz bilan bog‘laning</h2>
         <form action="{% url 'support_contact' %}" method="post">
             {% csrf_token %}
             <label for="name">Ism:</label>
             <input type="text" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" name="email" required>
+            <label for="phone">Telefon:</label>
+            <input type="text" name="phone" required>
             <label for="message">Xabar:</label>
             <textarea name="message" rows="4" required></textarea>
             <button type="submit">Yuborish</button>
         </form>
     </div>
-
     <div class="live-chat">
         <h2>Live Chat</h2>
         <p>Agar savollaringiz bo'lsa, bizning Live Chat xizmatimiz orqali tezkor yordam olishingiz mumkin.</p>
@@ -48,10 +58,12 @@
 {% block extra_js %}
 <script src="{% static 'js/support.js' %}"></script>
 <script>
-function startLiveChat() {
-    const notification = document.getElementById("notification");
-    notification.textContent = "Tez orada ishga tushadi";
-    notification.style.display = "block"; // Bildirishnomani ko'rsatish
-}
+// Xabarni avtomatik yo‘q qilish
+setTimeout(function() {
+    const messagesDiv = document.getElementById('messages');
+    if (messagesDiv) {
+        messagesDiv.style.display = 'none';
+    }
+}, 5000);  // 5 soniyada yo'qoladi
 </script>
 {% endblock %}

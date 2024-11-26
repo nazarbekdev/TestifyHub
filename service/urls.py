@@ -16,4 +16,5 @@ urlpatterns = [
     path('some_view/', some_view, name='some_view'),
     path('watch-demo/', watch_demo_view, name='watch_demo'),
     path('try-for-14-days/', try_for_14_view, name='try_for_14_days'),
+    path('try-for-14-days/trial_success', trial_success, name='trial_success'),
 ]

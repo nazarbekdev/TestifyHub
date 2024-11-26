@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from datetime import datetime
-from .models import PartnerRequest, TrialRequest, Subscription
+from .models import PartnerRequest, TrialRequest, Subscription, CallCenter
 from .forms import TrialForm
 
 
@@ -40,19 +40,19 @@ def partner_request(request):
             message=message
         )
 
-        # Admin emailiga xabar yuborish (ixtiyoriy)
-        send_mail(
-            subject=f"New Partnership Request from {company_name}",
-            message=f"Company Name: {company_name}\nContact Name: {contact_name}\nEmail: {email}\nPhone: {phone}\nMessage: {message}",
-            from_email='no-reply@testifyhub.com',  # O'zingizning email manzilingiz
-            recipient_list=['admin@testifyhub.com'],  # Administrator email manzili
-            fail_silently=False,
-        )
+        # # Admin emailiga xabar yuborish (ixtiyoriy)
+        # send_mail(
+        #     subject=f"New Partnership Request from {company_name}",
+        #     message=f"Company Name: {company_name}\nContact Name: {contact_name}\nEmail: {email}\nPhone: {phone}\nMessage: {message}",
+        #     from_email='nazarbekqobulov28@gmail.com',  # O'zingizning email manzilingiz
+        #     recipient_list=['mruzdevgpt@gmail.com'],  # Administrator email manzili
+        #     fail_silently=False,
+        # )
 
         # Foydalanuvchiga xabar
-        messages.success(request, "Thank you for your partnership request! We will get back to you soon.")
+        messages.success(request, "Biz bilan hamkorlik qilishga qiziqish bildirganingiz uchun tashakkur! Tez orada bog'lanamiz.")
 
-        return redirect("partnership")  # Muvaffaqiyatli bo'lsa, partnership sahifasiga yo'naltiriladi
+        return render(request, "partnership.html") # Muvaffaqiyatli bo'lsa, partnership sahifasiga yo'naltiriladi
 
     return render(request, "partnership.html")
 
@@ -65,13 +65,20 @@ def support_contact(request):
     if request.method == 'POST':
         # POST ma'lumotlarni olish
         name = request.POST.get('name')
-        email = request.POST.get('email')
+        phone = request.POST.get('phone')
         message = request.POST.get('message')
 
-        # Ma'lumotni qayta ishlash yoki saqlash
-        # Masalan, ma'lumotlarni email orqali yuborish yoki bazaga saqlash
+        CallCenter.objects.create(
+            name=name,
+            phone=phone,
+            message=message
+        )
 
-        return HttpResponse("Thank you for contacting support. We will get back to you soon.")
+        # Foydalanuvchiga bildirishnoma
+        messages.success(request,
+                         "Yordam xizmatiga murojaat qilganingiz uchun tashakkur! Tez orada siz bilan bog'lanamiz.")
+
+        return redirect('support')
 
     # Agar GET bo'lsa, support_contact.html sahifasini ko'rsatamiz
     return render(request, 'support_contact.html')
